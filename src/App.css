@@ -1,0 +1,219 @@
+:root {
+  --lightgrey: rgb(101, 119, 134);
+}
+
+body {
+  background: #333;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root {
+  width: 100vw;
+  max-width: 500px;
+  background: white;
+}
+
+#tweets {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  margin: 10px 0;
+}
+
+.tweet {
+  box-sizing: border-box;
+  font-weight: 400;
+  padding: 10px;
+  margin: 0;
+  min-height: 75px;
+  line-height: 1.3125;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.tweet:hover {
+  background: rgb(245, 248, 250);
+  cursor: pointer;
+}
+
+.author-image {
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 5px 15px 15px 15px;
+}
+
+.image-box {
+  min-height: 100%;
+}
+
+.author-name {
+  font-size: 15px;
+  font-weight: 700;
+  display: inline;
+  margin-right: 0.5ch;
+}
+
+.author-handle {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--lightgrey);
+  display: inline;
+}
+
+.content-box {
+  flex-grow: 1;
+}
+
+.tweet-text {
+  margin: 2px 0 0 0;
+}
+
+.reactions {
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.author-handle:after {
+  content: "·";
+  display: inline;
+  margin: 5px;
+}
+
+.time {
+  color: var(--lightgrey);
+  font-size: 15px;
+}
+
+/* Reactions */
+.reactions {
+  width: 70%;
+  max-width: 425px;
+}
+
+.reaction {
+  display: inline-flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.reaction * {
+  transition: all ease 0.2s;
+}
+
+.reaction-count {
+  font-size: 15px;
+  color: var(--lightgrey);
+  margin-left: 2px;
+  /*width: 4ch;*/
+}
+
+.reply-icon,
+.heart-icon,
+.retweet-icon,
+.share-icon {
+  width: 18px;
+  height: 18px;
+  stroke: var(--lightgrey);
+  fill: none;
+}
+
+.heart-container,
+.reply-container,
+.retweet-container,
+.share-container {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-grid;
+  place-items: center;
+  user-select: none;
+  font-size: 20px;
+}
+
+/* Reply */
+.reply-container {
+  margin-left: -10px;
+}
+
+.reaction.reply:hover .reply-container {
+  background: rgb(223, 240, 250);
+}
+
+.reaction.reply:hover .reply-count {
+  color: rgb(29, 161, 242);
+}
+
+.reaction.reply:hover .reply-icon {
+  stroke: rgb(29, 161, 242);
+}
+
+/* Heart */
+.reaction.heart:hover .heart-container {
+  background: rgb(243, 227, 235);
+  /*transition: background ease 0.3s;*/
+}
+
+.reaction.heart:hover .heart-icon {
+  stroke: rgb(227, 64, 114);
+}
+
+.loved .heart-icon {
+  fill: rgb(227, 64, 114);
+  stroke: rgb(227, 64, 114);
+}
+
+.reaction.heart:hover .heart-count {
+  color: rgb(227, 64, 114);
+}
+
+.retweet-icon {
+  stroke: none;
+  fill: var(--lightgrey);
+}
+
+.reaction.retweet:hover .retweet-container {
+  background: rgb(223, 242, 235);
+  /*transition: background ease 0.3s;*/
+}
+
+.reaction.retweet:hover .retweet-icon {
+  fill: rgb(53, 196, 116);
+}
+
+.reaction.retweet:hover .retweet-count {
+  color: rgb(53, 196, 116);
+}
+
+.share-icon {
+  stroke: none;
+  fill: var(--lightgrey);
+}
+
+.reaction.share:hover .share-container {
+  background: rgb(223, 240, 250);
+}
+
+.reaction.share:hover .share-icon {
+  fill: rgb(29, 161, 242);
+}
+
+@media screen and (max-width: 400px) {
+  .reaction-count {
+    display: none;
+  }
+}
