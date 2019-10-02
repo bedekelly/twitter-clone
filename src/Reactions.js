@@ -15,9 +15,9 @@ async function share(obj) {
   }
 }
 
-export function Retweet({ count }) {
+export function Retweet({ count, onClick }) {
   return (
-    <div className={"reaction retweet"}>
+    <div className={"reaction retweet"} onClick={onClick} role={"button"}>
       <div className="retweet-container">{RetweetIcon}</div>
       <span className={"reaction-count retweet-count"}>{count}</span>
     </div>
@@ -36,7 +36,7 @@ export function Heart({ count, loved, toggle }) {
 
 export function Reply({ count }) {
   return (
-    <div className="reaction reply">
+    <div className="reaction reply" role={"button"}>
       <div className="reply-container">{ReplyIcon}</div>
       <span className="reaction-count reply-count">{count}</span>
     </div>
@@ -45,7 +45,7 @@ export function Reply({ count }) {
 
 export function Share({text}) {
   return (
-    <div className={"reaction share"} onClick={() => share({text})}>
+    <div className={"reaction share"} onClick={() => share({text})} role={"button"}>
       <div className="share-container">{ShareIcon}</div>
     </div>
   );

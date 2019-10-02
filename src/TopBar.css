@@ -1,0 +1,29 @@
+#tweets {
+    overflow: hidden;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 4px var(--lightgrey);
+    z-index: 2;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 13px;
+}
+
+.home-header {
+    margin: 0;
+    font-size: 24px;
+}
+
+.reload {
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+}

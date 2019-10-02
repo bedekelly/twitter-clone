@@ -1,0 +1,26 @@
+.compose-btn {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: rgb(29, 161, 242);
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 36pt;
+    box-shadow: 0 0 8px #335;
+    transition: ease background 0.2s;
+}
+
+
+.compose-btn:hover {
+    background: rgb(26, 145, 218);
+}
+
+.quill-icon {
+    fill: white;
+    width: 60%;
+    height: 60%;
+}
