@@ -1,13 +1,15 @@
-#tweets {
-    overflow: hidden;
-}
-
 .top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 0 4px var(--lightgrey);
     z-index: 2;
+    border-bottom: 1px solid var(--lightgrey);
+    max-height: 56px;
+    position: fixed;
+    width: 100vw;
+    max-width: 500px;
+    background: white;
+    top: 0;
 }
 
 .profile-pic {

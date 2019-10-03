@@ -50,3 +50,22 @@ export function Share({text}) {
     </div>
   );
 }
+
+
+export default function Reactions({stats, dispatch, shareInfo}) {
+  const toggleHeart = () => dispatch({ type: "TOGGLE_HEART", id });
+  const {text, authorName, authorHandle, id, user} = shareInfo;
+  const heartCount = stats.heartCount + (stats.loved ? 1 : 0);
+  const retweet = () => dispatch({ type: "RETWEET", id, user });
+
+  return <div className="reactions">
+    <Reply count={stats.replyCount} />
+    <Retweet onClick={retweet} count={stats.retweetCount} />
+    <Heart
+      toggle={toggleHeart}
+      loved={stats.loved}
+      count={heartCount}
+    />
+    <Share text={`${text}  –${authorName} (${authorHandle})`} />
+  </div>
+}

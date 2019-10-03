@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { UserContext } from "./App";
-import { Reply, Heart, Retweet, Share } from "./Reactions.js";
 import { RetweetIcon } from "./Icons";
+import "./Tweet.css";
+import Reactions from "./Reactions";
 
 export default function Tweet(props) {
   const user = useContext(UserContext);
@@ -17,17 +18,13 @@ export default function Tweet(props) {
     dispatch
   } = props;
 
-  const toggleHeart = () => dispatch({ type: "TOGGLE_HEART", id });
-  const heartCount = stats.heartCount + (stats.loved ? 1 : 0);
-
-  const retweet = () => dispatch({ type: "RETWEET", id, user });
+  const shareInfo = { authorName, text, authorHandle, id, user };
 
   return (
     <div className="tweet">
       {retweetedBy && (
         <div className="retweet-info">
-          {RetweetIcon}
-          {retweetedBy} Retweeted
+          {RetweetIcon} {retweetedBy} Retweeted
         </div>
       )}
 
@@ -45,16 +42,7 @@ export default function Tweet(props) {
           <p className="tweet-text">{text}</p>
 
           {/* Show reaction buttons and counts. */}
-          <div className="reactions">
-            <Reply count={stats.replyCount} />
-            <Retweet onClick={retweet} count={stats.retweetCount} />
-            <Heart
-              toggle={toggleHeart}
-              loved={stats.loved}
-              count={heartCount}
-            />
-            <Share text={`${text}  –${authorName} (${authorHandle})`} />
-          </div>
+          <Reactions stats={stats} dispatch={dispatch} shareInfo={shareInfo} />
         </div>
       </div>
     </div>
