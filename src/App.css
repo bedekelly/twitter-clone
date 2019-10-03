@@ -152,17 +152,3 @@ body {
   }
 }
 
-.retweet-info {
-  color: rgb(101, 119, 134);
-  font-size: 13px;
-  margin-left: 80px;
-  padding-bottom: 5px;
-}
-
-.retweet-info .retweet-icon {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.5em;
-  margin-left: -1.5em;
-  margin-bottom: -0.1em;
-}
