@@ -1,6 +1,6 @@
 export default [
   {
-    image: "https://placeimg.com/50/50/any",
+    image: "https://placeimg.com/50/50/person",
     authorName: "Bede Kelly",
     authorHandle: "@bedekelly",
     time: "2m",
@@ -26,7 +26,7 @@ export default [
     id: '2'
   },
   {
-    image: "https://placeimg.com/50/50/any",
+    image: "https://placeimg.com/50/50/person",
     authorName: "Bede Kelly",
     authorHandle: "@bedekelly",
     time: "6h",
@@ -52,7 +52,7 @@ export default [
     id: '4'
   },
   {
-    image: "https://placeimg.com/50/50/any",
+    image: "https://placeimg.com/50/50/person",
     authorName: "Bede Kelly",
     authorHandle: "@bedekelly",
     time: "2m",
@@ -78,7 +78,7 @@ export default [
     id: '6'
   },
   {
-    image: "https://placeimg.com/50/50/any",
+    image: "https://placeimg.com/50/50/person",
     authorName: "Bede Kelly",
     authorHandle: "@bedekelly",
     time: "6h",
