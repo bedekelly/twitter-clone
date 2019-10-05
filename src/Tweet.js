@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import Linkify from "react-linkify";
+
 import { UserContext } from "./App";
 import { RetweetIcon } from "./Icons";
 import "./Tweet.css";
@@ -39,7 +41,9 @@ export default function Tweet(props) {
 
           {/* Show details of the tweet. */}
           <span className="time">{time}</span>
-          <p className="tweet-text">{text}</p>
+          <p className="tweet-text">
+            <Linkify>{text}</Linkify>
+          </p>
 
           {/* Show reaction buttons and counts. */}
           <Reactions stats={stats} dispatch={dispatch} shareInfo={shareInfo} />
